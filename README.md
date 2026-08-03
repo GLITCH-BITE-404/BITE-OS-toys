@@ -60,6 +60,9 @@ Or just run `bite-toys` with no arguments and use the hub.
 
 ## The toys
 
+Anything tagged **`·tool`** does a job rather than being a gimmick — same
+contract, same hub, it just isn't pretending to be a toy.
+
 ### `bitecam` — your webcam, live, as ASCII
 
 Real-time ASCII from your camera at whatever size the window is. ffmpeg captures
@@ -129,7 +132,7 @@ the audio reaction. The key list sits along the bottom; `?` hides it.
 
 > mpv publishes no MPRIS without the `mpv-mpris` package.
 
-### `biteglyph` — any picture, gif or video as ASCII art
+### `biteglyph` `·tool` — any picture, gif or video as ASCII art
 
 The only one with a window. Drop in a png, jpg, gif, mp4 — anything ffmpeg
 reads — and tune it live: width, character ramp, contrast, colour, invert.
