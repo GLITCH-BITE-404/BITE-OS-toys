@@ -17,6 +17,11 @@ toys/<name>-<version>.tar.gz
 
 ![the hub](docs/hub-commands.png)
 
+> **[How it works](HOW-IT-WORKS.md)** — the toy contract, the catalog, the
+> trust model, and how to write your own.
+> **[Compatibility](COMPATIBILITY.md)** — which distros, terminals and fonts
+> this actually runs on.
+
 ---
 
 ## Install a toy
@@ -217,6 +222,13 @@ are often not the same word. Missing dependencies are offered as a `pacman -S`
 on first run rather than crashing.
 
 ---
+
+## Docs
+
+- **[HOW-IT-WORKS.md](HOW-IT-WORKS.md)** — architecture, the toy contract,
+  checksums, the preview system, and why it is written in bash
+- **[COMPATIBILITY.md](COMPATIBILITY.md)** — distros, terminals, fonts, and the
+  exact packages each toy needs
 
 ## License
 
