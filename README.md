@@ -94,10 +94,16 @@ Press `p` for the **profiler**: brackets, a sweeping scan line, and a dossier
 that types itself out beside your head. `TAB` opens a settings panel you can
 change anything from without leaving the toy; `w` saves it.
 
+![bitemask](docs/bitemask.png)
+
 It works on **real pixels, not ASCII**, so `v` puts your censored face into a
 call as an ordinary webcam, and `r` records to mp4 — set `recshape=vertical` and
 it comes out 1080×1920, ready to post. The terminal preview is coarse by nature
 (one glyph per character cell); press `f` for a real window at full resolution.
+
+The dossier is a template you write yourself — `{subject}`, `{threat}`, `{geo}`,
+`{hash}` and friends get filled in. It is set dressing: bitemask never looks
+anything up and makes no network request of any kind.
 
 **Needs:** ffmpeg, python-opencv, opencv, python-numpy.
 
@@ -152,6 +158,8 @@ your config file is not touched until you say so.
 Every toy's settings live in `~/.config/bite-os/toys/<toy>.conf` and are handed
 to it as `TOY_<KEY>` environment variables — a toy never parses configuration
 itself.
+
+![the settings screen](docs/hub-settings.png)
 
 ```sh
 bite-toys config bitemask                 # list them
