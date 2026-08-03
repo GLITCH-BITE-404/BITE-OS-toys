@@ -1,6 +1,7 @@
 # BITE-OS toy catalog — name	version	sha256	description
 bitebeat	1.1	2076645239d39b0004148168502343be2cb85e993c432c18ade0d28f9b4d061b	Whatever you're playing, with synced lyrics, karaoke style
 bitecam	1.4	cafda120ae1efc0737dbcb48a33792f77187ed1690cf128136db01138b1ec927	Your webcam, live, as ASCII art in the terminal
+bitedig	1.0	26591130fd35af0ea85848f58b69055b0c7ac475b7a6565a21499050b58c251e	Search that goes deeper the further out you go
 biteglyph	1.1	b05e668fd2a52d2dfacbb90980ee7e75242f5c78ea2715c741ce3ac28f6f1a77	Turn any picture, gif or video into ASCII art
 bitemask	1.5	bdcd43b8a6a2fd01d28ccb7a4fc9db2867ebdedb94dcc2b629403aab913ffe7e	Covers your face live, and profiles it like you're being tracked
 bitemuseum	1.0	e05e3343916fe56cbe7a81d8d4a9fadadace3344b567e37357d607374721a2e1	Your machine's history as a fullscreen exhibition

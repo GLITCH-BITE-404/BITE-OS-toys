@@ -60,7 +60,7 @@ Or just run `bite-toys` with no arguments and use the hub.
 
 ## The toys
 
-Anything tagged **`·tool`** does a job rather than being a gimmick — same
+Anything tagged **`⚙ tool`** does a job rather than being a gimmick — same
 contract, same hub, it just isn't pretending to be a toy.
 
 ### `bitecam` — your webcam, live, as ASCII
@@ -165,6 +165,41 @@ biteglyph clip.mp4  --out clip.gif  --width 100 --fps 12
 ```
 
 **Needs:** ffmpeg, qt6-declarative, python-numpy, python-pillow.
+
+### `bitedig` `⚙ tool` — search that goes deeper the further out you go
+
+Five depths, five different engines, each one a planet you switch on or off.
+
+| depth | engine | what it reaches |
+|---|---|---|
+| **names** | `fd` (or `find`) | file and folder names |
+| **contents** | `ripgrep` | inside text files |
+| **media** | `ffprobe` | pictures, audio, video — including their tags |
+| **web** | your SearxNG, else open APIs | the open web |
+| **onion** | `tor` | Tor-reachable services |
+
+**A depth whose engine is missing shows a red planet and a `get` button.**
+Nothing is installed behind your back — it asks, then runs `pacman` for you.
+
+Two things it's honest about rather than pretending otherwise:
+
+- **Public SearxNG instances block API access.** Measured: searx.be serves a
+  captcha, searxng.site 403s, priv.au 429s. Point `web_instance` at your own
+  and you get real aggregated results; leave it blank and it falls back to
+  DuckDuckGo's and Wikipedia's open APIs, which give summaries and articles
+  rather than a ranked page of links.
+- **`onion` is a curated list, not a crawler.** SecureDrop, Ahmia, archives —
+  the services people have an actual reason to reach. A general onion index
+  mostly surfaces markets and stolen data, which isn't worth building. Nothing
+  goes over Tor without a confirmation, and Tor must be installed first.
+
+```sh
+bitedig "wolf" --depth names,contents --root ~/projects
+bitedig "cachyos" --depth web
+bitedig --engines            # which depths are ready, what's missing
+```
+
+**Needs:** qt6-declarative, python. Everything else is per-depth and optional.
 
 ### `bitemuseum` — your machine's history as an exhibition
 
