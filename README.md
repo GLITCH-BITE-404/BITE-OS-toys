@@ -15,6 +15,8 @@ catalog.tsv                    name <TAB> version <TAB> sha256 <TAB> description
 toys/<name>-<version>.tar.gz
 ```
 
+![the hub](docs/hub-commands.png)
+
 ---
 
 ## Install a toy
@@ -64,6 +66,8 @@ full-screen.
   (run `bitecam --setup-camera` once first)
 - `n` cycles character ramps, `c` flips truecolour/mono, `i` inverts, `m` unmirrors
 
+![bitecam](docs/bitecam.png)
+
 Settings include `charset`, `color`, `fps`, `mirror`, `invert`, `recformat`,
 `recdir`, `reccell`. **Needs:** ffmpeg, python-numpy, python-pillow.
 
@@ -106,8 +110,11 @@ Looks for an `.lrc` next to the audio file first, then your lyrics folder, then
 lrclib.net if online lookup is on. Big text is rasterised at runtime, so it
 renders Hebrew and any other script just as happily as English.
 
+![bitebeat](docs/bitebeat.png)
+
 `space` play/pause, `←/→` seek, `[` `]` nudge sync, `n`/`p` track, `w` toggles
-the audio reaction. **Needs:** playerctl, cava, python-numpy, python-pillow.
+the audio reaction. The key list sits along the bottom; `?` hides it.
+**Needs:** playerctl, cava, python-numpy, python-pillow.
 
 > mpv publishes no MPRIS without the `mpv-mpris` package.
 
@@ -121,10 +128,24 @@ heaviest things you're carrying, and what you've forgotten.
 `T` starts a guided tour that advances on its own every 7 seconds so you can
 film it hands-free. `Enter` opens the real file, `F` opens its folder.
 
+![bitemuseum](docs/bitemuseum.png)
+
 Strictly read-only. Browser history stays hidden until you press `B`.
 **Needs:** qt6-declarative, python.
 
 ---
+
+## Trying settings before you keep them
+
+The **PREVIEW** tab renders each toy from a built-in sample scene, so nothing
+runs until you press Enter and no camera or music player is ever opened for it.
+
+![the preview tab](docs/hub-preview.png)
+
+Press `c` and the picture holds still while you change settings; `Enter` runs it
+again with the new values so you can see the difference, and `w` keeps them.
+Anything you have not kept is marked `●` and is discarded when you back out —
+your config file is not touched until you say so.
 
 ## Settings
 
