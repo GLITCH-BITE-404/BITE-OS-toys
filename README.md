@@ -168,7 +168,15 @@ biteglyph clip.mp4  --out clip.gif  --width 100 --fps 12
 
 ### `bitedig` `⚙ tool` — search that goes deeper the further out you go
 
-Five depths, five different engines, each one a planet you switch on or off.
+Fullscreen. Query at the top, space underneath. Each engine is a planet — they
+drift past while idle, **swirl into orbit when you search**, and spin the whole
+time. Click one to see what it found and which engine it is; unavailable engines
+sit greyed out with an `install` button under them.
+
+**`◈ ENTER THIS PLANET ◈`** runs a matrix sequence — falling glyphs, handshake,
+decrypt, then the screen blooms green and the page opens for real.
+
+Five depths, five different engines.
 
 | depth | engine | what it reaches |
 |---|---|---|
