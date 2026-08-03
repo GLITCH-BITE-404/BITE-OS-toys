@@ -137,6 +137,8 @@ the audio reaction. The key list sits along the bottom; `?` hides it.
 The only one with a window. Drop in a png, jpg, gif, mp4 — anything ffmpeg
 reads — and tune it live: width, character ramp, contrast, colour, invert.
 
+![biteglyph](docs/biteglyph.png)
+
 Save it as whatever you need:
 
 | format | what you get |
@@ -175,6 +177,8 @@ sit greyed out with an `install` button under them.
 
 **`◈ ENTER THIS PLANET ◈`** runs a matrix sequence — falling glyphs, handshake,
 decrypt, then the screen blooms green and the page opens for real.
+
+![bitedig](docs/bitedig.png)
 
 Five depths, five different engines.
 
