@@ -129,6 +129,40 @@ the audio reaction. The key list sits along the bottom; `?` hides it.
 
 > mpv publishes no MPRIS without the `mpv-mpris` package.
 
+### `biteglyph` — any picture, gif or video as ASCII art
+
+The only one with a window. Drop in a png, jpg, gif, mp4 — anything ffmpeg
+reads — and tune it live: width, character ramp, contrast, colour, invert.
+
+Save it as whatever you need:
+
+| format | what you get |
+|---|---|
+| `png` | a still — this is the one that can be a fetch logo |
+| `mp4` | the animation, as real video |
+| `gif` | a looping ASCII gif |
+| `txt` | raw ANSI you can `cat` |
+| `cast` | asciinema replay, selectable text |
+
+**Background removal has three tiers:** it trusts the file's own transparency
+when there is one, flood-fills a flat backdrop inward from the corners (ideal
+for logos and icons), or falls back to OpenCV's foreground extraction for
+photos — a good guess, not a perfect matte.
+
+**"Use as fetch logo"** drops a cut-out png into `~/.config/glitch/icons`,
+which is the pool `glitch-fetch` rolls from, so your terminal starts greeting
+you with it. Note a dark source makes dark ASCII — turn contrast up or invert
+on for something that reads on a dark terminal.
+
+Every control is also a flag, so it scripts:
+
+```sh
+biteglyph laffy.png --out laffy.png --width 140 --charset blocks --cut auto
+biteglyph clip.mp4  --out clip.gif  --width 100 --fps 12
+```
+
+**Needs:** ffmpeg, qt6-declarative, python-numpy, python-pillow.
+
 ### `bitemuseum` — your machine's history as an exhibition
 
 Turns your own disk into a museum. Opens on a title card, then walks through
