@@ -33,6 +33,33 @@ bite-toys install bitemask    # put it on your PATH as a real command
 bitemask                      # run it
 ```
 
+## Updating the hub itself
+
+The catalog can hand you new toys, but it can't hand you a new hub — so the hub
+publishes its own version and checksum in `hub.tsv`, right next to `catalog.tsv`,
+and can pull a newer copy of itself over the old one:
+
+```sh
+bite-toys --version           # what you're on
+bite-toys self-update         # pull a newer hub
+```
+
+`bite-toys update` and `bite-toys doctor` both tell you when one is waiting, and
+the hub header shows `↑ hub 1.2` while it is.
+
+It refuses rather than guesses. A **checksum mismatch** or a download that
+**doesn't parse as bash** is thrown away with the running hub untouched — a
+broken hub is the one thing that can't repair itself. The new copy is staged
+next to the old one so the final step is an atomic rename, and your previous
+version is kept in `~/.cache/bite-os/`. Installing a toy symlinks
+`~/.local/bin/<toy>` at the hub itself, so replacing the file keeps every shim
+working.
+
+**If pacman owns it, pacman updates it.** A hub at `/usr/bin/bite-toys` came
+from the `bite-os` package, and writing over it would work exactly once — until
+the next `-Syu` put it back. It says so and points you at `sudo pacman -Syu
+bite-os` instead.
+
 Or just run `bite-toys` with no arguments and use the hub.
 
 ```
