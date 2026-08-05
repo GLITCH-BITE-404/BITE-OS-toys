@@ -265,12 +265,20 @@ percentage ticking down as they watch. Once those land, the fake half underneath
 — a directory listing and a 4.2 GB upload bar — is believed too. No exploit,
 just theatre with a few honest sentences in it.
 
-The other fourteen include a kernel panic whose call trace has a frame called
-`trust_a_stranger+0x2f/0x40`, a blue screen naming their *actual* browser as the
-failing module, an update screen that sticks at 99% for six seconds and then
-turns red and reverts, forty-five wandering cursors, a screen that shatters from
-a random impact point, and a battery that drains from wherever theirs really
-sits. `format`, `ransom` and `webcam` are marked **spicy** — they read as
+The scenes that imitate an operating system are built to **match** it, not to
+look cool. There is no CRT filter over them — that is opt-in, because a
+scanlined BSOD is a poster of a BSOD.
+
+| scene | what it actually is |
+|---|---|
+| `bsod` | Segoe UI on the real `#0078D7`, thin sad face, percentage that sticks and jumps, and the QR block beside the support text — with the failing module named after their *actual* browser |
+| `format` | an elevated Command Prompt: real title bar, real build banner, the `system32` prompt, and `format.com`'s own capitalised warning |
+| `update` | the five-dot Windows spinner, built properly, stuck at 99% for seven seconds before it gives up and starts undoing changes |
+| `panic` | a bare console — grey on black, no filter, and the cursor stops blinking at the end, because a panicked kernel stops updating the screen |
+
+The rest are the stylised ones: forty-five wandering cursors, a screen that
+shatters from a random impact point, a battery that drains from wherever theirs
+really sits, and a calm paragraph that decays into `MEMORY FAULT`. `format`, `ransom` and `webcam` are marked **spicy** — they read as
 genuinely real to people who have actually been hacked. Aim carefully.
 
 `bitten` is the opposite: no scare at all. It shows the same real fields and
