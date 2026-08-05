@@ -228,12 +228,117 @@ film it hands-free. `Enter` opens the real file, `F` opens its folder.
 Strictly read-only. Browser history stays hidden until you press `B`.
 **Needs:** qt6-declarative, python.
 
+### `biteprank` — a prank link you send, that goes off on their screen
+
+Not a prank you run on your own machine. `biteprank` forges one self-contained
+web page and hands you a link to send someone. Everything happens inside their
+browser tab, which means it cannot touch a file, install anything, or survive
+the tab closing.
+
+**The link does not open on a wall of red text.** It opens as something
+ordinary — and the scene erupts out of whatever they press.
+
+| bait | what they see first |
+|---|---|
+| `video` | a message with a blurred clip, a play button and *"is this you?? look at 0:14"* |
+| `photo` | a photo blurred out with **tap to reveal** over it |
+| `folder` | a shared folder, three believable files, an **Open** button |
+| `none` | no disguise — straight into the scene |
+
+That disguise isn't decoration. A browser refuses fullscreen and refuses to make
+any sound until the visitor has *deliberately* clicked something, so the bait is
+what earns the one click that makes everything else work.
+
+```sh
+biteprank                                    # pick a scene, a bait and a delivery
+biteprank trace                              # forge it with your defaults
+biteprank make -s ransom -n Yuval -b video -H tunnel
+biteprank list --full                        # what all fifteen actually do
+```
+
+#### Why it lands
+
+`trace`, the flagship, prints a column of facts about whoever opened it — and
+they are all **true**: their public address, the city it resolves to, their
+carrier, their browser and OS, their screen, their timezone, their exact battery
+percentage ticking down as they watch. Once those land, the fake half underneath
+— a directory listing and a 4.2 GB upload bar — is believed too. No exploit,
+just theatre with a few honest sentences in it.
+
+The other fourteen include a kernel panic whose call trace has a frame called
+`trust_a_stranger+0x2f/0x40`, a blue screen naming their *actual* browser as the
+failing module, an update screen that sticks at 99% for six seconds and then
+turns red and reverts, forty-five wandering cursors, a screen that shatters from
+a random impact point, and a battery that drains from wherever theirs really
+sits. `format`, `ransom` and `webcam` are marked **spicy** — they read as
+genuinely real to people who have actually been hacked. Aim carefully.
+
+`bitten` is the opposite: no scare at all. It shows the same real fields and
+closes by pointing out that every site they visit can already read all of it.
+A prank that ends as a privacy demo.
+
+#### Sending it
+
+| delivery | what you get | needs |
+|---|---|---|
+| `tunnel` | a public link that works anywhere, and dies when you `Ctrl-C` | cloudflared |
+| `local` | a link only reachable on your own Wi-Fi | — |
+| `github` | a permanent link on GitHub Pages | git + `ghrepo` set |
+| `file` | a `.html` on disk — for testing on yourself, **not** for sending |  — |
+
+Nothing is a dependency of the toy, only of one particular way of sending, so
+`biteprank list` never demands a package. Pick a delivery you don't have the
+tool for and **it offers to install it** — say no and it prints the deliveries
+that work right now instead.
+
+The link is copied to your clipboard, and printed as a QR code for handing a
+prank to someone's phone across a table.
+
+#### Watching it land
+
+With `tunnel` or `local` your terminal becomes a live feed:
+
+```
+  ● 14:04:59  opened the link                   · 81.218.44.207 · Chrome on Android
+  ● 14:05:00  took the bait — scene is running  · 81.218.44.207 · Chrome on Android
+  ● 14:05:01  reached the GOTCHA                · 81.218.44.207 · Chrome on Android
+```
+
+#### What it will not do
+
+- **No bait or scene ever asks for a password, a login, or a payment.** That
+  stops being a prank and starts being phishing.
+- **None of them imitate a real company** — no logos, no brand names, no
+  lookalike domains.
+- **Nothing about the visitor is stored anywhere.** The geo lookup happens in
+  their tab and the answer never leaves it. The one thing that travels is a
+  single word per stage, back to the little server in your own terminal, holding
+  no data beyond the request that server already saw. It is never written down
+  and dies with the link.
+- **`ESC` ends any scene instantly**, and every single one resolves to the same
+  reveal: a big **GOTCHA** and a plain sentence saying nothing happened and
+  nothing was taken — including telling them about that ping.
+
+A prank someone can't escape, or can't tell was a prank afterwards, is just
+being mean to somebody.
+
+**Needs:** nothing to run. `cloudflared` for a public link, `qrencode` for the
+QR, `git` for GitHub Pages.
+
 ---
 
 ## Trying settings before you keep them
 
 The **PREVIEW** tab renders each toy from a built-in sample scene, so nothing
 runs until you press Enter and no camera or music player is ever opened for it.
+
+Some toys are never run to be previewed at all. `bitecam` and `bitemask` would
+have to open the camera and pull frames — seconds of work and a device handle,
+spent because a cursor landed on a row — so the hub **draws** their preview
+instead: a static impression of the HUD they put on screen, labelled `·mockup`
+and captioned so it can't be mistaken for a live frame. `bitedig`, `biteglyph`
+and `bitemuseum` draw themselves in real windows, so they show why they have no
+preview rather than painting an empty pane.
 
 ![the preview tab](docs/hub-preview.png)
 
