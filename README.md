@@ -332,13 +332,14 @@ QR, `git` for GitHub Pages.
 The **PREVIEW** tab renders each toy from a built-in sample scene, so nothing
 runs until you press Enter and no camera or music player is ever opened for it.
 
-Some toys are never run to be previewed at all. `bitecam` and `bitemask` would
-have to open the camera and pull frames — seconds of work and a device handle,
-spent because a cursor landed on a row — so the hub **draws** their preview
-instead: a static impression of the HUD they put on screen, labelled `·mockup`
-and captioned so it can't be mistaken for a live frame. `bitedig`, `biteglyph`
-and `bitemuseum` draw themselves in real windows, so they show why they have no
-preview rather than painting an empty pane.
+`bitecam` and `bitemask` are **drawn** rather than run. Both already preview
+themselves without touching the camera — but they do it with real pixel video,
+and real video squeezed into a pane this size turns a 10px dossier into
+unreadable coloured mush. So the hub renders the same HUD in characters, at a
+size you can actually read, tagged `·mockup` and captioned so it is never
+mistaken for a live frame. `bitedig`, `biteglyph` and `bitemuseum` draw
+themselves in real windows, so they say why they have no preview instead of
+painting an empty pane.
 
 ![the preview tab](docs/hub-preview.png)
 
