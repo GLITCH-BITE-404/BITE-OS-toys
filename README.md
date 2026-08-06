@@ -262,6 +262,8 @@ web page and hands you a link to send someone. Everything happens inside their
 browser tab, which means it cannot touch a file, install anything, or survive
 the tab closing.
 
+![biteprank](docs/biteprank.png)
+
 **The link does not open on a wall of red text.** It opens as something
 ordinary — and the scene erupts out of whatever they press.
 
@@ -275,6 +277,11 @@ ordinary — and the scene erupts out of whatever they press.
 That disguise isn't decoration. A browser refuses fullscreen and refuses to make
 any sound until the visitor has *deliberately* clicked something, so the bait is
 what earns the one click that makes everything else work.
+
+![what the link opens as](docs/biteprank-bait.png)
+
+That is the whole page until they press play. The scene you picked runs *after*
+that click, and the reveal comes after the scene.
 
 ```sh
 biteprank                                    # pick a scene, a bait and a delivery
@@ -329,6 +336,8 @@ that work right now instead.
 The link is copied to your clipboard, and printed as a QR code for handing a
 prank to someone's phone across a table.
 
+![forging and sending it](docs/biteprank-send.png)
+
 #### Watching it land
 
 With `tunnel` or `local` your terminal becomes a live feed:
@@ -353,6 +362,8 @@ With `tunnel` or `local` your terminal becomes a live feed:
 - **`ESC` ends any scene instantly**, and every single one resolves to the same
   reveal: a big **GOTCHA** and a plain sentence saying nothing happened and
   nothing was taken — including telling them about that ping.
+
+![how every scene ends](docs/biteprank-gotcha.png)
 
 A prank someone can't escape, or can't tell was a prank afterwards, is just
 being mean to somebody.
