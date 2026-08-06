@@ -269,7 +269,7 @@ ordinary — and the scene erupts out of whatever they press.
 
 | bait | what they see first |
 |---|---|
-| `video` | a message with a blurred clip, a play button and *"is this you?? look at 0:14"* |
+| `video` | a message with a blurred clip, a play button and a caption you write — default *"is this you?? 😭 look at 0:14"* |
 | `photo` | a photo blurred out with **tap to reveal** over it |
 | `folder` | a shared folder, three believable files, an **Open** button |
 | `none` | no disguise — straight into the scene |
@@ -280,8 +280,11 @@ what earns the one click that makes everything else work.
 
 ![what the link opens as](docs/biteprank-bait.png)
 
-That is the whole page until they press play. The scene you picked runs *after*
-that click, and the reveal comes after the scene.
+Nothing in that screenshot is fixed. The name next to the avatar is `-u`, the
+line under the clip is `-t`, and `__NAME__` inside it becomes whoever you aimed
+it at — the interactive run asks you for both, and blank just falls back to the
+defaults shown here. That is the whole page until they press play; the scene you
+picked runs *after* that click, and the reveal comes after the scene.
 
 ```sh
 biteprank                                    # pick a scene, a bait and a delivery
@@ -364,6 +367,9 @@ With `tunnel` or `local` your terminal becomes a live feed:
   nothing was taken — including telling them about that ping.
 
 ![how every scene ends](docs/biteprank-gotcha.png)
+
+The name and the line under it are your `brand` and `tagline` — that is the part
+that tells them it was you. Only the small "made with biteprank" credit is fixed.
 
 A prank someone can't escape, or can't tell was a prank afterwards, is just
 being mean to somebody.
