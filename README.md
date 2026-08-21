@@ -155,6 +155,45 @@ renders Hebrew and any other script just as happily as English.
 
 `space` play/pause, `←/→` seek, `[` `]` nudge sync, `n`/`p` track, `w` toggles
 the audio reaction. The key list sits along the bottom; `?` hides it.
+
+#### Stage mode
+
+Press `s` — or start it with `--stage`, or set `stage=on` — and everything goes
+except the line being sung. No title, no progress bar, no spectrum, no key bar.
+Float a small transparent terminal over your rice and it becomes a lyric
+overlay.
+
+![stage mode](docs/bitebeat-stage.png)
+
+The line is not shrunk to fit the window. Shrinking is what turns a lyric into
+mush: thirty characters across a small window leaves a couple of pixels per
+letter. Instead the size is taken from the longest **word** — the smallest unit
+that has to stay whole — and the line is broken into pages that turn as it is
+sung. Fewer words on screen, at a size you can actually read:
+
+```
+t=21s          t=27s          t=34s
+  Never          run            and
+  gonna          around         desert
+```
+
+Drag the window bigger and the letters grow with it. One word to a page is
+always the biggest the letters can be, but it leaves most of the window empty,
+so it takes a second row whenever that costs almost no size — and drops back to
+one word at a time when the window is too cramped to afford it.
+
+`glyphs` picks how the letters are drawn:
+
+| value | what you get |
+|---|---|
+| `auto` | block letters while they fit legibly, text once they would not |
+| `block` | big ASCII block letters, always |
+| `text` | the terminal's own font — small but perfectly crisp at any window size |
+
+`glyphs=text` is the one for a genuinely tiny lyric window. Block art needs
+around thirteen columns per character, so below a certain size it cannot be both
+small and legible; the terminal's own font can, because the terminal draws it.
+
 **Needs:** playerctl, cava, python-numpy, python-pillow.
 
 > mpv publishes no MPRIS without the `mpv-mpris` package.
