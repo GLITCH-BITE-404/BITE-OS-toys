@@ -418,6 +418,91 @@ QR, `git` for GitHub Pages.
 
 ---
 
+### `letterbite` — a letter you send, that opens on their screen
+
+`biteprank`'s machinery pointed the other way. Same envelope, same tunnel, same
+live feed in your terminal — and everything above that layer different, because
+the two are trying to make somebody feel opposite things.
+
+You do not build a letter here. You pick one and cast it. That distinction is
+the whole design: anybody handed a form with six fields produces something that
+reads like a form was filled in, and a letter that reads like a form is worse
+than no letter. A section is a shelf of finished pieces, each one already
+directed — the timing, the order, what holds still and what moves — and what you
+supply is their name, your name, a few lines, and whatever else that piece asks
+for.
+
+```sh
+letterbite                  pick a shelf and a piece, step by step
+letterbite birthday         straight into that shelf
+letterbite make -s candles -n Yuval -a 19 -e balloon -H tunnel
+```
+
+| shelf | pieces |
+|---|---|
+| `birthday` | `candles` `unwrap` |
+| `love` | `ink` `polaroids` |
+| `thanks` | `receipt` |
+
+**`candles`** — a cake in a dark room with one candle for every year, and it asks
+them to blow. It means it: the page listens on the microphone, calibrates
+against the room first so it works in a noisy kitchen and doesn't fire on
+nothing in a silent one, and the flames lean on the real level before they go
+out. There's a tap button beside it that's exactly as valid, and nothing is ever
+asked for until somebody presses the button that says what it's for.
+
+![letterbite](docs/letterbite.png)
+
+**`ink`** — the letter written out in front of them by a pen that is actually
+there. Each character soaks in from a blur the way ink does, rather than
+snapping on like a terminal, and the nib is placed on the character's own box so
+the hand and the writing can't drift apart. The pen lifts before the signature,
+because a signature doesn't arrive at the speed of a sentence.
+
+![ink](docs/letterbite-ink.png)
+
+**`unwrap`** is a wrapped box whose paper comes away where they drag their
+finger — one masked rectangle whose mask is a path that grows, so it stays
+smooth on a phone, with the ragged edge jittered into the geometry rather than
+filtered on top of it. **`polaroids`** drops their real photographs onto a
+table, crooked and pushable, with the last card face down and the letter written
+on the back. **`receipt`** prints a till roll out of a slot at the top of the
+screen, itemising everything somebody did and never mentioned.
+
+![receipt](docs/letterbite-receipt.png)
+
+The envelope is not decoration. A browser refuses sound and refuses fullscreen
+until the visitor has deliberately touched the page, so without one the music
+never starts — and a letter already on screen when the tab opens has no moment
+in it. Somebody has to open it. So: a wax seal that cracks, a ribbon that comes
+off, a balloon that pops, a card that opens on its spine.
+
+![the arrival](docs/letterbite-arrive.png)
+
+Nothing is ever asked of the reader — no name box, no login, no email field,
+nothing to install, and nothing about them stored anywhere. Sent by tunnel or
+over your own Wi-Fi you get a live feed in your terminal (*opened the link ·
+opened it · is reading it · read it to the end*), and the closing card tells them
+that happened and hands them a button to answer it with, which is the only reply
+a page with no back end is capable of.
+
+Unlike its sibling it does **not** swallow refresh, right-click or the context
+menu. A page pretending to be a crash can't afford to be caught being a page;
+nothing here is pretending. Reload it, read the source, save it, keep it.
+
+The handwriting is embedded rather than named, because naming it doesn't work:
+`cursive` resolves to DejaVu Sans on most Linux desktops and to nothing at all
+on Android — the two platforms these links actually get opened on. One woff2
+(Caveat, OFL, licence shipped beside it) goes into the page as base64. Pictures
+are the one departure from `biteprank`'s no-external-bytes rule: `-p` inlines
+them as data URIs, downscaled first, so the letter stays a single file that
+opens out of a Downloads folder with the network off.
+
+**Needs:** nothing to run. `cloudflared` for a public link, `qrencode` for the
+QR, `git` for GitHub Pages, `imagemagick` or `python-pillow` to shrink pictures.
+
+---
+
 ## Trying settings before you keep them
 
 The **PREVIEW** tab renders each toy from a built-in sample scene, so nothing
