@@ -443,6 +443,7 @@ letterbite make -s candles -n Yuval -a 19 -e balloon -H tunnel
 | `birthday` | `candles` `unwrap` |
 | `love` | `ink` `polaroids` `more` |
 | `thanks` | `receipt` |
+| `sorry` | `unsent` |
 
 **`candles`** — a cake in a dark room with one candle for every year, and it asks
 them to blow. It means it: the page listens on the microphone, calibrates
@@ -484,13 +485,36 @@ it isn't your first language and you'd rather not pretend it is.
 
 ![more](docs/letterbite-more.png)
 
+**`unsent`** — the drafts, and then the one that goes. A composer at the bottom
+of an empty thread types a line out, holds it long enough to be read, and then
+takes it back one character at a time. Then another. Then another. Only the last
+line is ever sent, and it should be the shortest — the default set ends on three
+words. The deleting is the apology, and it has to be watched rather than
+summarised: an apology that arrives fully formed is a paragraph, and everybody
+has had a paragraph. What nobody gets to see is the ones written first. So the
+backspacing runs slower than the typing, which is also true of the real thing,
+and every draft is held at full length before it goes, because a line erased
+before it can be read never existed. Pass your drafts with `-l`; the last one is
+the one that sends. No confetti on this one, and the drafts never use their name
+— somebody being apologised to by name in the middle of the apology is being
+handled.
+
+![unsent](docs/letterbite-unsent.png)
+
+**`polaroids`** drops their real photographs onto a table, crooked, overlapping
+and pushable with a finger. A neat grid would read as a gallery and a gallery
+reads as a website, so the pile is deliberately untidy. The last card lands
+**face down** with nothing on it — that's the one that says *turn me over*, and
+what's written on the other side is the actual letter. The pictures are the
+envelope; the letter is on the back of the last one.
+
+![polaroids](docs/letterbite-polaroids.png)
+
 **`unwrap`** is a wrapped box whose paper comes away where they drag their
 finger — one masked rectangle whose mask is a path that grows, so it stays
 smooth on a phone, with the ragged edge jittered into the geometry rather than
-filtered on top of it. **`polaroids`** drops their real photographs onto a
-table, crooked and pushable, with the last card face down and the letter written
-on the back. **`receipt`** prints a till roll out of a slot at the top of the
-screen, itemising everything somebody did and never mentioned.
+filtered on top of it. **`receipt`** prints a till roll out of a slot at the top
+of the screen, itemising everything somebody did and never mentioned.
 
 ![receipt](docs/letterbite-receipt.png)
 
