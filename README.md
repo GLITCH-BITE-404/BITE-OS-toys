@@ -520,7 +520,12 @@ on Android — the two platforms these links actually get opened on. One woff2
 are the one departure from `biteprank`'s no-external-bytes rule: `-p` takes
 files, globs, `https://` links or a pasted `data:` URI, and inlines all of them
 as data URIs, downscaled first, so the letter stays a single file that opens out
-of a Downloads folder with the network off. A link is resolved at forge time and
+of a Downloads folder with the network off. Two kinds of link that aren't
+pictures get resolved rather than refused, because they're the two people
+actually paste: a search result (`google.com/imgres?…`, and Bing's and Yandex's
+equivalents) carries the real address in its own query string, and a share page
+names it in the same preview tags a chat app reads to draw a link card. A link
+is resolved at forge time and
 what lands in the page is the bytes — never an `<img src>` pointing at somebody
 else's server. So the letter still works when the link rots or the album goes
 private, it still works offline, and opening it doesn't tell whoever hosts that
