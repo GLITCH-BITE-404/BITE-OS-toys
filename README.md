@@ -441,7 +441,7 @@ letterbite make -s candles -n Yuval -a 19 -e balloon -H tunnel
 | shelf | pieces |
 |---|---|
 | `birthday` | `candles` `unwrap` |
-| `love` | `ink` `polaroids` |
+| `love` | `ink` `polaroids` `more` |
 | `thanks` | `receipt` |
 
 **`candles`** — a cake in a dark room with one candle for every year, and it asks
@@ -460,6 +460,29 @@ the hand and the writing can't drift apart. The pen lifts before the signature,
 because a signature doesn't arrive at the speed of a sentence.
 
 ![ink](docs/letterbite-ink.png)
+
+**`more`** — the argument about who loves who more, rigged so they lose it. A
+scoreboard: their name on one side, yours on the other. It plays two rounds by
+itself first, because a board they haven't watched move is just a button, and a
+board they've watched do the same thing twice is a dare. Then it hands the
+button over — tap it, or hold it down and their number runs while the note
+climbs a semitone a press. None of it matters: your side is recomputed from
+theirs plus one every single time, so there's no press that draws and none that
+wins. On the fifth the two numbers land level and hold there for most of a
+second, which is the only moment they're winning and is a lie. On the eighth it
+stops fighting — your side runs away from them and settles on ∞, because a
+number one bigger is still a number they can picture catching, and that one
+isn't. The only button left on screen is the one that gives in, and they have to
+press it themselves; that press comes back down the tunnel as the one reply a
+static page can make. The final score follows the letter down the page.
+
+Pictures are optional here and change what pressing *is*: pass them with `-p`
+and every press pins one up behind the board, on a ring that keeps the middle
+clear, so the argument uncovers them one at a time. `argue_lang` in settings
+puts the piece in Russian, or in Russian with the English underneath — for when
+it isn't your first language and you'd rather not pretend it is.
+
+![more](docs/letterbite-more.png)
 
 **`unwrap`** is a wrapped box whose paper comes away where they drag their
 finger — one masked rectangle whose mask is a path that grows, so it stays
@@ -494,9 +517,14 @@ The handwriting is embedded rather than named, because naming it doesn't work:
 `cursive` resolves to DejaVu Sans on most Linux desktops and to nothing at all
 on Android — the two platforms these links actually get opened on. One woff2
 (Caveat, OFL, licence shipped beside it) goes into the page as base64. Pictures
-are the one departure from `biteprank`'s no-external-bytes rule: `-p` inlines
-them as data URIs, downscaled first, so the letter stays a single file that
-opens out of a Downloads folder with the network off.
+are the one departure from `biteprank`'s no-external-bytes rule: `-p` takes
+files, globs, `https://` links or a pasted `data:` URI, and inlines all of them
+as data URIs, downscaled first, so the letter stays a single file that opens out
+of a Downloads folder with the network off. A link is resolved at forge time and
+what lands in the page is the bytes — never an `<img src>` pointing at somebody
+else's server. So the letter still works when the link rots or the album goes
+private, it still works offline, and opening it doesn't tell whoever hosts that
+picture where it was opened and when.
 
 **Needs:** nothing to run. `cloudflared` for a public link, `qrencode` for the
 QR, `git` for GitHub Pages, `imagemagick` or `python-pillow` to shrink pictures.
