@@ -560,6 +560,70 @@ QR, `git` for GitHub Pages, `imagemagick` or `python-pillow` to shrink pictures.
 
 ---
 
+### `bitewrite` — a page where every letter lands like the launcher's
+
+The launcher's search box is the most satisfying thing in the shell to type
+into, and it only ever holds one short line. This is that box turned into a
+whole page, and then into four things to do with it.
+
+```sh
+bitewrite      opens the window — F1 write · F2 code · F3 lyrics · F4 speed · F5 settings
+```
+
+![bitewrite](docs/bitewrite.png)
+
+**WRITE** is the page. Every letter is its own object: by default it uses the
+launcher's exact pop — grows in from a third of its size with the same OutBack
+overshoot, rises ten pixels, fades in over 140ms — lifted straight from
+serpantinum's `Input.qml` rather than imitated. Type into the middle of a line
+and everything after it springs aside; a word that stops fitting hops down to
+the next line. What you wrote is still there next time you open it.
+
+**CODE** runs whatever you wrote. **Ctrl+Enter** compiles the text on the page
+and runs it full-screen — broken code doesn't run and says so, valid code does,
+and the header tells you which as you type. Start from a blank page (Enter
+indents after a `{`, a `}` steps back out), or type one of ten programs over its
+faint ghost — matrix rain, a starfield, fireworks, plasma, a tunnel, game of
+life — and change it as you go. Long lines scroll the page sideways instead of
+running off the edge. A program defines `frame(t)` and draws with `ctx`; drop
+your own `.js` into `~/.local/share/bite-os/bitewrite/snippets`.
+
+**LYRICS** takes whatever is playing in Spotify, YouTube or mpv (over MPRIS),
+or a song from your Music folder, finds its lyrics — next to the file, then
+`bitebeat`'s cache, then lrclib.net — and makes them the ghost. In *follow*
+the song plays through the line you're on and **waits at the start of the next
+one until you get there**, so it never runs off five lines ahead of you. Finish
+a line and keep typing and you drop onto the next one on your own. *drive*
+plays only while you keep typing; *karaoke* plays straight through and you
+race the singer.
+
+**SPEED** is a typing test that isn't a form. Pick 15, 30, 60 or 120 seconds,
+∞, or your own time (Tab), and random words, real sentences, hard text with
+capitals, numbers and symbols, or your own WRITE page (Shift+Tab). The clock
+starts on your first key, and your speed is live at the bottom the whole time —
+a rolling figure that glides rather than jumps, accuracy, the clock, a
+sparkline. Timed runs end on a results card that keeps your best for every
+time/text combination.
+
+Mistakes are counted **word by word, line by line**, in every mode. A stray
+space or a missing letter costs the word it's in — not everything after it.
+
+**F5** opens the settings, and every one of them applies live while you keep
+typing: how letters arrive (launcher, drop, glitch, stamp, spin, float, random),
+how they leave (shrink, fall, dust, flick, glitch), colour, caret, sparks, a
+combo counter that makes the page edge glow, shake, ripple — and nine sound
+packs. `launcher` is the shell's own click at your sfx volume; the rest are
+synthesised on first run, nothing sampled: typewriter with a bell on Enter,
+thock, bubble, glitch, rain, and `musicbox` and `chiptune`, where every letter
+is a fixed note so your words come out as tunes. The wheel scrolls the panel,
+Delete puts one setting back, and the last row resets them all.
+
+**Needs:** `qt6-declarative`, `python-numpy` for the sound packs,
+`qt6-multimedia` for sound (without it the page still works, silently),
+`playerctl` for the lyrics of whatever is playing.
+
+---
+
 ## Trying settings before you keep them
 
 The **PREVIEW** tab renders each toy from a built-in sample scene, so nothing

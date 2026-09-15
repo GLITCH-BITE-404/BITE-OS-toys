@@ -127,6 +127,23 @@ Fullscreen Qt window — needs a graphical session, so it will not run in a TTY.
 Strictly read-only: it reads your files to build the exhibition and never
 writes to them.
 
+### `bitewrite`
+`qt6-declarative` (for `qml6`), `python`, `python-numpy` (the synthesised
+sound packs, built once into `~/.cache/bite-os/bitewrite-sfx`).
+
+`qt6-multimedia` for sound. Without it the page still works, silently.
+
+The `launcher` sound pack uses serpantinum's own click where serpantinum is
+installed; elsewhere a synthesised click stands in for it.
+
+LYRICS needs `playerctl` for whatever is playing, and any MPRIS player — the
+same `mpv-mpris` caveat as `bitebeat` applies. Lyrics lookup contacts
+`lrclib.net` with the track and artist name, and shares `bitebeat`'s lyrics
+cache. *follow* needs synced (timestamped) lyrics; with plain lyrics it falls
+back to *drive*.
+
+A Qt window — needs a graphical session, so it will not run in a TTY.
+
 ---
 
 ## Wayland and X11
