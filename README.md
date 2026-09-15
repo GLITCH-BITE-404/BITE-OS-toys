@@ -605,8 +605,13 @@ a rolling figure that glides rather than jumps, accuracy, the clock, a
 sparkline. Timed runs end on a results card that keeps your best for every
 time/text combination.
 
-Mistakes are counted **word by word, line by line**, in every mode. A stray
-space or a missing letter costs the word it's in — not everything after it.
+In LYRICS and SPEED **every key fills the next letter's slot, and the line never
+moves.** A wrong letter stays red where it is and you just carry on — the next
+letter is judged against its own slot. Extra letters are refused rather than
+shoving the line along, a space mid-word skips to the next word (the skipped
+letters stay in their place, in red), and a stray space does nothing. In CODE,
+where you're free to write anything, mistakes are counted word by word and the
+ghost stays where it is.
 
 **F5** opens the settings, and every one of them applies live while you keep
 typing: how letters arrive (launcher, drop, glitch, stamp, spin, float, random),
