@@ -564,10 +564,10 @@ QR, `git` for GitHub Pages, `imagemagick` or `python-pillow` to shrink pictures.
 
 The launcher's search box is the most satisfying thing in the shell to type
 into, and it only ever holds one short line. This is that box turned into a
-whole page, and then into four things to do with it.
+whole page, and then into five things to do with it.
 
 ```sh
-bitewrite      opens the window — F1 write · F2 code · F3 lyrics · F4 speed · F5 settings
+bitewrite      opens the window — F1 write · F2 notes · F3 code · F4 lyrics · F5 speed · F6 settings
 ```
 
 ![bitewrite](docs/bitewrite.png)
@@ -579,14 +579,30 @@ serpantinum's `Input.qml` rather than imitated. Type into the middle of a line
 and everything after it springs aside; a word that stops fitting hops down to
 the next line. What you wrote is still there next time you open it.
 
-**CODE** runs whatever you wrote. **Ctrl+Enter** compiles the text on the page
-and runs it full-screen — broken code doesn't run and says so, valid code does,
+**NOTES** keeps as many notes as you like, each saved as you type and titled by
+its first line, with a list beside the page — Ctrl+N for a new one, Ctrl+K to
+find one, Alt+↑↓ to switch.
+
+Hebrew and Arabic run **right to left**, in every mode: an English word or a
+number inside a Hebrew line still reads correctly, brackets face the right
+way, and Chinese, Japanese and emoji take two cells. Each paragraph picks its
+own direction, or the settings pin one.
+
+**CODE** runs whatever you wrote, in **JavaScript** (inside the window), or
+**Python** and **Bash** (in your terminal). **Ctrl+Enter** runs the text on the
+page — broken code doesn't run and says so, valid code does,
 and the header tells you which as you type. Start from a blank page (Enter
 indents after a `{`, a `}` steps back out), or type one of ten programs over its
-faint ghost — matrix rain, a starfield, fireworks, plasma, a tunnel, game of
-life — and change it as you go. Long lines scroll the page sideways instead of
-running off the edge. A program defines `frame(t)` and draws with `ctx`; drop
-your own `.js` into `~/.local/share/bite-os/bitewrite/snippets`.
+faint ghost — 32 of them, from easy to extreme: matrix rain, a spinning cube,
+boids, metaballs, a mandelbrot dive, doom fire, the spinning ASCII donut — or
+press **⏭ finish code** to skip the typing and go straight to changing it.
+Programs can be **played**: while one runs, the keyboard and the mouse belong
+to it (`keys`, `mouse`, `onKey`, `onClick`), and only Esc or the stop button
+bring you back. There are games — snake, pong, flappy dot, a swarm that chases
+your mouse, a paint program. Long lines scroll the page sideways instead of
+running off the edge. A JavaScript program defines `frame(t)` and draws with
+`ctx`; drop your own `.js`, `.py` or `.sh` into
+`~/.local/share/bite-os/bitewrite/snippets`.
 
 **LYRICS** takes whatever is playing in Spotify, YouTube or mpv (over MPRIS),
 or a song from your Music folder, finds its lyrics — next to the file, then
@@ -613,7 +629,7 @@ letters stay in their place, in red), and a stray space does nothing. In CODE,
 where you're free to write anything, mistakes are counted word by word and the
 ghost stays where it is.
 
-**F5** opens the settings, and every one of them applies live while you keep
+**F6** opens the settings, and every one of them applies live while you keep
 typing: how letters arrive (launcher, drop, glitch, stamp, spin, float, random),
 how they leave (shrink, fall, dust, flick, glitch), colour, caret, sparks, a
 combo counter that makes the page edge glow, shake, ripple — and nine sound

@@ -133,6 +133,13 @@ sound packs, built once into `~/.cache/bite-os/bitewrite-sfx`).
 
 `qt6-multimedia` for sound. Without it the page still works, silently.
 
+Python and Bash programs open in your terminal: Hyprland's `$terminal` first,
+then kitty, foot, alacritty, wezterm, ghostty or konsole (`terminal=` in the
+settings file overrides it). Right-to-left letters are drawn in a monospace
+font that has them — CaskaydiaCove Nerd Font Mono here — found with
+`fc-list :lang=he`. Arabic letters show unjoined, because every letter is
+drawn on its own.
+
 The `launcher` sound pack uses serpantinum's own click where serpantinum is
 installed; elsewhere a synthesised click stands in for it.
 
