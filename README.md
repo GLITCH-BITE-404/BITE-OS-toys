@@ -588,8 +588,28 @@ number inside a Hebrew line still reads correctly, brackets face the right
 way, and Chinese, Japanese and emoji take two cells. Each paragraph picks its
 own direction, or the settings pin one.
 
-**CODE** runs whatever you wrote, in **JavaScript** (inside the window), or
-**Python** and **Bash** (in your terminal). **Ctrl+Enter** runs the text on the
+**CODE** is a folder, not a page. Your files run down the side — as many as you
+like, each with a name you chose, saved as you type — and Alt+↑↓, Ctrl+K or a
+click moves between them; Ctrl+N makes one, Ctrl+E renames one, Ctrl+Shift+Del
+throws one away. **A file's ending is its language**: rename `page.js` to
+`page.html` and Ctrl+Enter stops running it and starts drawing it. **Line
+numbers** run down the side of the page (settings → line numbers). A `/` in a
+name makes a **folder** — `site/index.html` — and `+ folder` or Ctrl+Shift+N
+makes one; click a folder to fold it. NOTES has folders too (Ctrl+E moves a
+note into one).
+
+**Ctrl+D shows what changed**, the way any editor does: this file against the
+last version you ran — kept beside it, so it survives a restart — or against
+another of your files, line by line with old and new line numbers, `+` and `−`,
+and Tab to jump between changes.
+
+**Ctrl+I installs** what you made: it lands in `Documents/bitewrite`, folders
+kept, and a `.py` or `.sh` is also dropped into `~/.local/bin` without its
+extension and made executable, so its name is a command. Works for notes too.
+**Ctrl+Shift+I installs everything** — every file and every note in one go. It runs
+whatever you wrote, in **JavaScript** (inside the window),
+**HTML** (drawn inside the window too), or **Python** and **Bash** (in your
+terminal). **Ctrl+Enter** runs the text on the
 page — broken code doesn't run and says so, valid code does,
 and the header tells you which as you type. Start from a blank page (Enter
 indents after a `{`, a `}` steps back out), or type one of ten programs over its
@@ -601,8 +621,32 @@ to it (`keys`, `mouse`, `onKey`, `onClick`), and only Esc or the stop button
 bring you back. There are games — snake, pong, flappy dot, a swarm that chases
 your mouse, a paint program. Long lines scroll the page sideways instead of
 running off the edge. A JavaScript program defines `frame(t)` and draws with
-`ctx`; drop your own `.js`, `.py` or `.sh` into
+`ctx`; drop your own `.js`, `.py`, `.sh` or `.html` into
 `~/.local/share/bite-os/bitewrite/snippets`.
+
+**HTML gets a browser that isn't one.** No browser is started, nothing is
+opened, no network is touched: the tabs, the address bar, the loading sweep and
+the status line are drawn by the toy, and each page is Qt's rich-text engine,
+which reads a real subset of HTML and CSS. Headings, paragraphs, lists, tables,
+links, quotes, colours, fonts and page backgrounds land; scripts, canvas,
+video, forms, flexbox and grid don't — and rather than drop them quietly, the
+status line **counts them out loud** (`not drawn: script ×2 · canvas · flexbox`).
+It holds **as many pages open at once as you like**: every Ctrl+Enter sends what
+you just wrote to a new tab, so the last dozen things you tried are still there
+to flip between, and Esc only puts the browser away — the tabs are waiting when
+you run the next one. **Ctrl+T** opens the start page, which lists every page
+this machine has — your own files first, the samples under them — and a link
+from one page to another really goes there, **by the name you gave it**, with
+its own history per tab, so ‹ and › mean something. Two files that link to each
+other browse like a small site; every visit, reload, back and forward asks the
+file again rather than showing the copy it kept, so a page you changed in the
+editor is the page you see here. A link to the outside world
+lands on an offline page; a link to a file that isn't here lands on a not-found
+page — both written on the spot. Ctrl+W closes a tab, Ctrl+Tab switches, Alt+←
+goes back, Ctrl+= / Ctrl+- zoom. Six pages ship to type over the ghost, from a
+first heading-and-paragraph to a whole styled article, and they link to each
+other. A page that doesn't close its tags doesn't draw, and the header says
+which line opened the tag that is still open.
 
 **LYRICS** takes whatever is playing in Spotify, YouTube or mpv (over MPRIS),
 or a song from your Music folder, finds its lyrics — next to the file, then

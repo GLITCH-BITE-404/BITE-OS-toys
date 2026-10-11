@@ -133,6 +133,11 @@ sound packs, built once into `~/.cache/bite-os/bitewrite-sfx`).
 
 `qt6-multimedia` for sound. Without it the page still works, silently.
 
+HTML pages are drawn in the window by Qt's rich-text engine — no browser, no
+`qt6-webengine`, no network. That engine covers HTML 4 and a subset of CSS 2.1,
+so scripts, canvas, video, forms, flexbox and grid never render anywhere; the
+status line names what it skipped rather than hiding it.
+
 Python and Bash programs open in your terminal: Hyprland's `$terminal` first,
 then kitty, foot, alacritty, wezterm, ghostty or konsole (`terminal=` in the
 settings file overrides it). Right-to-left letters are drawn in a monospace
